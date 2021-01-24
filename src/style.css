@@ -6,6 +6,10 @@ html {
 	font-weight: bold;
 }
 
+a {
+	text-decoration: none;
+}
+
 .logo {
 	width: 100px;
 	margin: 25px;
@@ -30,6 +34,35 @@ html {
 	fill: #FAEC48;
 }
 
+.navigation-buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.navigation-buttons button{
+	background-color: #61dafb;
+	height: 50px;
+	width: 50px;
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+	border: none;
+	outline: none;
+	transition: all 0.5s;
+	border-radius: 25px;
+}
+
+.navigation-buttons button:hover {
+	background-color: #FAEC48;
+}
+
+.navigation-buttons button:active {
+	background-color: #fa4848;
+}
+
 .menu {
 	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
 	position: -webkit-sticky;
@@ -41,13 +74,15 @@ html {
 	height: 125px;
 	align-items: center;
 	display: grid;
-	grid-template-columns: auto auto 350px;	
+	grid-template-columns: auto auto minmax( auto, 350px);	
+	overflow: hidden;
 	transition: all 0.5s;
 }
 
 .menu ul {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	list-style: none;
 }
 
@@ -240,6 +275,7 @@ h1 {
 	font-weight: normal;
 	position: relative;
 	z-index: 2;
+	text-decoration: none;
 }
 
 .card-subtitle {
@@ -248,10 +284,17 @@ h1 {
 	font-weight: lighter;
 	position: relative;
 	z-index: 2;
+	text-decoration: none;
 }
 
 .card-image {
 	height: 180px;
+	position: relative;
+	z-index: 2;
+}
+
+.one-card-image {
+	width: 360px;
 	position: relative;
 	z-index: 2;
 }

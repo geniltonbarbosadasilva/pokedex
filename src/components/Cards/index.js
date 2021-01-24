@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Card from "./Card";
 
 class Cards extends Component {
@@ -11,7 +12,14 @@ class Cards extends Component {
         return(
             <ul className="pokedex">
                 {
-                    this.cards.map( ( _, index) => <Card id={ index + 1 } key={ index + 1 }/>)
+                    this.cards.map( ( _, index) => {
+                        let id = index + 1;
+                        return(
+                            <Link to={ `/one-result/${id}` } key={ id }>
+                                <Card id={ id } key={ id }/>
+                            </Link>
+                        );
+                    })
                 }                
             </ul>
         );

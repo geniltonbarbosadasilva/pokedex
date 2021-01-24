@@ -31,8 +31,8 @@ class Header extends Component {
                 <h1>Pokedex</h1>
                 <ul>                
                     <Option link="/">Home</Option>
-                    <Option link="/sobre">About Us</Option>
-                    <Option link="/contatos">Contact</Option>
+                    <Option link="/about">About Us</Option>
+                    <Option link="/contact">Contact</Option>
                 </ul>
             </header>
         );
