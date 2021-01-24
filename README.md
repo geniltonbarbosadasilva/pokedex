@@ -1,3 +1,7 @@
+# Pokedex
+
+Front-end project created with React JS, and uses the API [Pokeapi](https://pokeapi.co/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
