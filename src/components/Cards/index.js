@@ -5,22 +5,34 @@ import Card from "./Card";
 class Cards extends Component {
     constructor(props) {
         super(props);
-        this.cards = Array(20).fill();
+        this.state = {
+            limit: this.props.limit,
+            offset: this.props.offset
+        }
+    }
+
+    returnCards() {        
+        let offset = Number(this.state.offset);
+        let limit = Number(this.state.limit) + offset;
+        let cards = [];        
+
+        for (let index = offset + 1; index <= limit; index++) {            
+            cards.push(
+                <Link to={`/one-result/${ index }`} key={ index }>
+                    <Card id={ index } key={ index } />
+                </Link>
+            );
+        }
+
+        return cards;
     }
 
     render() {
-        return(
+        return (
             <ul className="pokedex">
-                {
-                    this.cards.map( ( _, index) => {
-                        let id = index + 1;
-                        return(
-                            <Link to={ `/one-result/${id}` } key={ id }>
-                                <Card id={ id } key={ id }/>
-                            </Link>
-                        );
-                    })
-                }                
+                {                    
+                    this.returnCards().map( (card) => card )
+                }
             </ul>
         );
     }

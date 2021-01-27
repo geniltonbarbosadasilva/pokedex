@@ -3,7 +3,7 @@ import Card from "../components/Cards/Card";
 
 class OnePokemon extends Component {
     constructor(props) {
-        super(props);
+        super(props);        
         this.state = {
             id: ''
         }        
@@ -12,6 +12,7 @@ class OnePokemon extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
         this.setState({ id: id });          
+        window.scrollTo(0, 0);
     }
 
     render() {

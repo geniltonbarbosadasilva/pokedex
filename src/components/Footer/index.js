@@ -17,8 +17,9 @@ class Footer extends Component {
                     <li><Twitter/></li>
                 </ul>
                 <ul>
-                    <li><a href="">Sobre o sistema</a></li>
-                    <li><a href="">Início</a></li>
+                    <li><a href="/">Início</a></li>
+                    <li>|</li>
+                    <li><a href="/about">Sobre o sistema</a></li>
                 </ul>
             </footer>
         );

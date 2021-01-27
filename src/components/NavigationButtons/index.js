@@ -3,15 +3,25 @@ import React, { Component } from 'react';
 class NavigationButtons extends Component {
     constructor(props) {
         super(props);
-        this.state = {        }
+        this.state = { }
     }
     
-    render() {
+    render() {        
+        let { limit, offset } = this.props;
+        let newOffsetPlus = Number(offset) + Number(limit);
+        let newOffsetMinus = Number(offset) - Number(limit);
+        
+        newOffsetMinus = (newOffsetMinus < 0)? 0 : newOffsetMinus;
+
         return (
             <div className="navigation-buttons">
-                <button>-</button>
-                <p>{ this.props.page }</p>
-                <button>+</button>
+                <a href = {`/home/limit=${limit}&offset=${newOffsetMinus}`}>
+                    <button>-</button>
+                </a>
+                <p> { offset/limit + 1 } </p>     
+                <a href = {`/home/limit=${limit}&offset=${newOffsetPlus}`}>
+                    <button>+</button>
+                </a>
             </div>
         );
     }

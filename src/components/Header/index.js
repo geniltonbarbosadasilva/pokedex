@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import logo from "../../assets/logo.png"
+import Logo from "./Logo";
 import Option from "./Option";
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            shadow: ""
+            shadow: "",
         }
 
         this.scrolling = this.scrolling.bind(this);
@@ -27,7 +27,8 @@ class Header extends Component {
     render() {
         return (
             <header className={ `menu ${ this.state.shadow }` }>
-                <img src={ logo } alt="" className="logo"/>
+                {/* <img src={ logo } alt="" className="logo"/> */}
+                <Logo/>
                 <h1>Pokedex</h1>
                 <ul>                
                     <Option link="/">Home</Option>

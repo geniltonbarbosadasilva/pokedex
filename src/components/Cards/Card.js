@@ -7,7 +7,7 @@ class Card extends Component {
         this.state = {
             isMounted: false,
             pokemon: {
-                id: 1, 
+                id: this.props.id, 
                 name: "", 
                 types: []  
             }
@@ -19,18 +19,14 @@ class Card extends Component {
             isMounted: true
         });
 
-        fetch(`https://pokeapi.co/api/v2/pokemon/${this.props.id}`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.pokemon.id}`)
         .then( (response) => response.json() )
         .then( (json) => { 
             if (this.state.isMounted) {
                 this.setState({ pokemon: json })                    
             }            
         })
-        .catch((error) => { console.error(error) });
-        
-        if (this.props.oneCard) {
-            document.documentElement.scrollTop = 0;   
-        }        
+        .catch((error) => { console.error(error) });     
     }
 
     componentWillUnmount(){
@@ -47,6 +43,7 @@ class Card extends Component {
         let { id, name, types } = this.state.pokemon;
         let typesInfos = types.map( ( typeInfo ) => typeInfo.type.name );
         let classCardImage = ( this.props.oneCard )? "one-card-image": "card-image";
+
         return(
             <li className={ `card ${ typesInfos[0] || "" }` } >
                 <img className={ classCardImage } alt={ name } src={ this.imgSrc(id) } />

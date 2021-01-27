@@ -12,6 +12,7 @@ const Routes = () => {
             <Route path="/" component={ Header }/>                   
                 <Switch>
                     <Route exact path="/" component={ Home }/>
+                    <Route exact path="/home/:search" component={ Home }/>
                     <Route exact path="/one-result/:id" component={ OnePokemon }/>
                     <Route path="*" component={ Erro }/>
                 </Switch>
