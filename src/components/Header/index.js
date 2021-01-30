@@ -33,7 +33,7 @@ class Header extends Component {
                 <ul>                
                     <Option link="/">Home</Option>
                     <Option link="/about">About Us</Option>
-                    <Option link="/contact">Contact</Option>
+                    <Option link="/panel">Painel</Option>
                 </ul>
             </header>
         );
